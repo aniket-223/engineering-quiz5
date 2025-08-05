@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - EngQuiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-graduation-cap"></i>
+                <div class="brand-text">
+                    <span class="brand-name">EngQuiz</span>
+                    <p class="brand-subtitle">Engineering Knowledge Assessment</p>
+                </div>
+            </div>
+            <div class="user-info">
+                <div class="user-details">
+                    <p class="user-name" id="userName">Loading...</p>
+                    <p class="user-meta" id="userMeta">Loading...</p>
+                </div>
+                <button class="btn btn-outline" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-main">
+        <div class="container">
+            <!-- Welcome Section -->
+            <div class="welcome-section">
+                <h1 class="welcome-title">Welcome to Your Dashboard</h1>
+                <p class="welcome-description" id="welcomeDescription">
+                    Ready to test your knowledge? Each quiz contains 50 randomly selected questions from our comprehensive question bank.
+                </p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card blue">
+                    <div class="stat-header">
+                        <span class="stat-label">Quizzes Taken</span>
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-value" id="quizzesTaken">0</div>
+                    <div class="stat-sublabel">Total assessments completed</div>
+                </div>
+
+                <div class="stat-card green">
+                    <div class="stat-header">
+                        <span class="stat-label">Average Score</span>
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-value" id="averageScore">0%</div>
+                    <div class="stat-sublabel">Overall performance</div>
+                </div>
+
+                <div class="stat-card purple">
+                    <div class="stat-header">
+                        <span class="stat-label">Department</span>
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="stat-value" id="userDepartment">Loading...</div>
+                    <div class="stat-sublabel">Engineering specialization</div>
+                </div>
+
+                <div class="stat-card orange">
+                    <div class="stat-header">
+                        <span class="stat-label">Questions Bank</span>
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="stat-value">200+</div>
+                    <div class="stat-sublabel">Available questions</div>
+                </div>
+            </div>
+
+            <!-- Main Content Grid -->
+            <div class="content-grid">
+                <!-- Quiz Section -->
+                <div class="quiz-section">
+                    <div class="section-card">
+                        <div class="section-header">
+                            <h2 class="section-title">
+                                <i class="fas fa-play"></i>
+                                Start New Assessment
+                            </h2>
+                            <p class="section-description">
+                                Take a comprehensive quiz with 50 randomly selected questions from your department's question bank
+                            </p>
+                        </div>
+
+                        <div class="quiz-info">
+                            <div class="subjects-info">
+                                <h4>Your Department Subjects:</h4>
+                                <div class="subjects-list" id="subjectsList">
+                                    <!-- Subjects will be populated by JavaScript -->
+                                </div>
+                            </div>
+
+                            <div class="quiz-stats">
+                                <div class="quiz-stat">
+                                    <div class="quiz-stat-number">50</div>
+                                    <div class="quiz-stat-label">Questions</div>
+                                </div>
+                                <div class="quiz-stat">
+                                    <div class="quiz-stat-number">50</div>
+                                    <div class="quiz-stat-label">Minutes</div>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary btn-large btn-full" onclick="startQuiz()">
+                                <i class="fas fa-play"></i>
+                                Begin Assessment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div class="results-section">
+                    <div class="section-card">
+                        <div class="section-header">
+                            <h2 class="section-title">
+                                <i class="fas fa-chart-line"></i>
+                                Recent Performance
+                            </h2>
+                            <p class="section-description">
+                                Your latest quiz results and performance trends
+                            </p>
+                        </div>
+
+                        <div class="results-content" id="resultsContent">
+                            <div class="no-results">
+                                <i class="fas fa-award"></i>
+                                <p class="no-results-title">No assessments yet</p>
+                                <p class="no-results-description">Take your first quiz to see results here!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Info Card -->
+            <div class="user-card">
+                <div class="user-card-content">
+                    <div class="user-card-info">
+                        <i class="fas fa-building user-card-icon"></i>
+                        <div class="user-card-details">
+                            <h3 class="user-card-name" id="userCardName">Loading...</h3>
+                            <p class="user-card-meta" id="userCardMeta">Loading...</p>
+                        </div>
+                    </div>
+                    <div class="user-card-stats">
+                        <div class="user-card-stat-number" id="totalQuizzes">0</div>
+                        <div class="user-card-stat-label">Assessments Completed</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

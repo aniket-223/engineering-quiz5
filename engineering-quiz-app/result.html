@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results - EngQuiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="result.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-graduation-cap"></i>
+                <div class="brand-text">
+                    <span class="brand-name">EngQuiz</span>
+                    <p class="brand-subtitle">Engineering Knowledge Assessment</p>
+                </div>
+            </div>
+            <button class="btn btn-primary" onclick="goToDashboard()">
+                <i class="fas fa-home"></i>
+                Dashboard
+            </button>
+        </div>
+    </header>
+
+    <main class="result-main">
+        <div class="container">
+            <!-- Results Header -->
+            <div class="result-header">
+                <i class="fas fa-award result-icon"></i>
+                <h1 class="result-title">Quiz Completed!</h1>
+                <p class="result-subtitle">Here are your results</p>
+            </div>
+
+            <!-- Score Card -->
+            <div class="score-card">
+                <div class="score-display">
+                    <div class="score-percentage" id="scorePercentage">0%</div>
+                    <div class="score-details" id="scoreDetails">0 out of 50 questions correct</div>
+                </div>
+                <div class="score-badge" id="scoreBadge">
+                    Loading...
+                </div>
+                <div class="completion-time" id="completionTime">
+                    Completed on loading...
+                </div>
+            </div>
+
+            <!-- Content Grid -->
+            <div class="result-content-grid">
+                <!-- Subject Performance -->
+                <div class="performance-card">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <i class="fas fa-chart-line"></i>
+                            Subject Performance
+                        </h2>
+                    </div>
+                    <div class="subject-stats" id="subjectStats">
+                        <!-- Subject performance will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Remarks Section -->
+                <div class="remarks-card">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <i class="fas fa-comment"></i>
+                            Your Remarks
+                        </h2>
+                        <p class="card-description">Share your thoughts about the quiz</p>
+                    </div>
+                    <div class="remarks-form">
+                        <label for="remarksText">Comments or Feedback</label>
+                        <textarea 
+                            id="remarksText" 
+                            placeholder="How was the quiz? Any suggestions or feedback?"
+                            rows="4"
+                        ></textarea>
+                        <button class="btn btn-primary btn-full" onclick="submitRemarks()">
+                            Submit Remarks
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="btn btn-outline btn-large" onclick="takeAnotherQuiz()">
+                    Take Another Quiz
+                </button>
+                <button class="btn btn-primary btn-large" onclick="goToDashboard()">
+                    Back to Dashboard
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="result.js"></script>
+</body>
+</html>
